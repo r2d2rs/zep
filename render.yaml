@@ -7,8 +7,6 @@ services:
       url: ghcr.io/getzep/zep-cloud:latest
     healthCheckPath: /healthz
     envVars:
-      # Disable web UI. WARNING: Do not enable this unless
-      # you are running Zep on a private network.
       - key: ZEP_SERVER_WEB_ENABLED
         value: false
       - key: PORT
@@ -30,9 +28,11 @@ services:
     env: image
     image:
       url: ghcr.io/getzep/zep-nlp-server:latest
+    region: frankfurt
 
 databases:
   - name: zep-postgres
     databaseName: zep
     postgresMajorVersion: 15
     ipAllowList: [] # only allow internal connections
+    region: frankfurt
