@@ -22,9 +22,8 @@ services:
           name: zep-nlp
           type: pserv
           property: hostport
-      - key: ZEP_OPENAI_API_KEY
-        sync: false
-      - region: frankfurt
+    region: frankfurt
+
   - type: pserv
     name: zep-nlp
     autoDeploy: false
